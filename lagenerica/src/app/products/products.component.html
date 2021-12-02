@@ -1,0 +1,49 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+<app-menu></app-menu>
+<div class="container col-lg-2" id="cuadro3">
+    <div class="form-group text-center">
+        <div class="form-group text-center">
+            <p style="color:white">
+                <strong><i class="fas fa-file-upload"></i> LOAD PRODUCTS</strong>
+            </p>
+            <img src="assets/producto.png" height="120" width="120" />
+        </div>
+        <input type="file" class="form-control"
+        (change)="onChange($event)" accept=".csv" />
+
+        <br>
+        <br>
+        <div class="col text-center">
+            <button class="btn btn-primary btn-block" (click)="onUpload()">LOAD FILE</button>
+        </div>
+        <div class="container">
+            <h4 *ngFor="let dato of resultados; let i=index" style="color: white">
+                file uploaded successfully
+            </h4>
+        </div>
+    </div>
+</div>
+<!-- <div>
+    <table class="table" *ngIf="records.length > 0">
+        <thead>
+            <tr>
+                <th scope="col">Code </th>
+                <th scope="col">Name </th>
+                <th scope="col">NitProvider </th>
+                <th scope="col">Purchase Price </th>
+                <th scope="col">Iva </th>
+                <th scope="col">Sale Price </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let record of records;let i = index;">    
+                <td> <span>{{record.code}}</span> </td>    
+                <td> <span>{{record.name}}</span> </td>    
+                <td> <span>{{record.nitprovider}}</span> </td>    
+                <td> <span>{{record.purchaseprice}}</span> </td>    
+                <td> <span>{{record.iva}}</span> </td>    
+                <td> <span>{{record.saleprice}}</span> </td>    
+              </tr>
+        </tbody>
+    </table>
+</div> -->

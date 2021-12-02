@@ -1,0 +1,31 @@
+<div class="container col-lg-3">
+    <div class="form-group text-center">
+      <div class="form-group text-center">
+        <p style="color: white">
+          <strong><i class="fas fa-sign-in-alt"></i> WELCOME</strong>
+        </p>
+  
+      </div>
+      <img src="assets/logo.jpg" height="180" width="240" />
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">
+          <i class="fas fa-user-tie"></i>
+        </span>
+        <input type="text" class="form-control" placeholder="Username" aria-label="Username"
+          aria-describedby="basic-addon1" [(ngModel)]="user">
+      </div>
+  
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1"><i class="fas fa-key"></i></span>
+        <input type="password" class="form-control" placeholder="Password" aria-label="Username"
+          aria-describedby="basic-addon1" [(ngModel)]="pass">
+  
+      </div>
+      <div class="col text-center">
+        <button class="btn btn-primary btn-block" (click)="comparar()">LOGIN</button>
+      </div>
+      <div *ngIf="correct==0" class="alert alert-danger" role="alert">
+        Usuario o contrasena incorrecta
+      </div>
+    </div>
+  </div>
