@@ -1,0 +1,24 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+<app-menu></app-menu>
+<div ><table  class="table table-dark table-striped">
+    <thead>
+        <tr>
+            <th>cedula_cliente</th>
+            <th>Codigo_venta</th>
+            <th>Iva</th>
+            <th>Total_venta</th>
+            <th>Valor_venta</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let cliente of contenido">
+            <td>{{cliente.cedula}}</td>
+            <td>{{cliente.codigo_venta}}</td>
+            <td>{{cliente.ivaventa}}</td>
+            <td>{{cliente.totalventa}}</td>
+            <td>{{cliente.valorventa}}</td>
+        </tr>
+    
+    </tbody>
+    
+    </table></div>

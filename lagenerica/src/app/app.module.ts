@@ -10,6 +10,8 @@ import { ReportesComponent } from './reportes/reportes.component';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { ProductsComponent } from './products/products.component';
+import { ListadoclienteComponent } from './listadocliente/listadocliente.component';
+import { ListadoventasComponent } from './listadoventas/listadoventas.component';
 
 
 
@@ -30,7 +32,9 @@ const  router: Routes = [
     MenuComponent,
     ReportesComponent,
     LoginComponent,
-    ProductsComponent
+    ProductsComponent,
+    ListadoclienteComponent,
+    ListadoventasComponent
   ],
   imports: [
     BrowserModule,
