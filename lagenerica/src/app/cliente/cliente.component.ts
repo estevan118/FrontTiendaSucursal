@@ -10,6 +10,7 @@ export class ClienteComponent implements OnInit {
 
   constructor(private objetohttp:HttpClient){
   }
+  contenido2!:any;
   microservicio!:String;
   escondercontenido2:any;
   cedula2!:String;
@@ -25,13 +26,13 @@ export class ClienteComponent implements OnInit {
  //metodo post
   postData(){
       this.objetohttp.post<any>(
-        "http://localhost:8080/cliente/Clientes",
+        "http://localhost:8080/api/clients",
         {
-          nombre_cliente: this.nombre,
-          email_cliente: this.correo,
-          cedula:this.cedula,
-          direccion_cliente:this.direccion,
-          telefono_cliente: this.telefono
+          identification: this.cedula,
+          address: this.direccion,
+          email:this.correo,
+          name:this.nombre,
+          phone: this.telefono
         },{observe:'response'}
       ).subscribe(response=>{
         this.respuesta=response.status;
@@ -40,7 +41,7 @@ export class ClienteComponent implements OnInit {
 
   res:any;
   contenido:any;
-  urlapi:string="http://localhost:8080/cliente/Clientes";
+  urlapi:string="http://localhost:8080/api/clients";
 
   //metedo get
   ngOnInit(): void {
@@ -53,7 +54,7 @@ export class ClienteComponent implements OnInit {
   // metodo delete
   Deletedata(){
     this.objetohttp.delete<any>(
-      "http://localhost:8080/cliente/Clientes",{observe:'response'}
+      "http://localhost:8080/api/clients",{observe:'response'}
       ).subscribe(response=>{
         this.respuesta=response.status;
       });
@@ -62,7 +63,7 @@ export class ClienteComponent implements OnInit {
   //eliminarporcedula
   Deleteforcedula(){
     this.objetohttp.delete<any>(
-      "http://localhost:8080/cliente/ClientesEliminarCedula/{cedula}?cedula=" + this.cedula2 ,{observe:'response'},
+      "http://localhost:8080/api/clients/identification/" + this.cedula2 ,{observe:'response'},
       ).subscribe(response=>{
         this.respuesta=response.status;
       });
@@ -89,13 +90,13 @@ public isClicked: boolean = false;
   update(){
     this.desbloquear();
     this.objetohttp.put<any>(
-      "http://localhost:8080/cliente/ActualizarClientes/"+this.cedula2,
+      "http://localhost:8080/api/clients/identification/"+this.cedula2,
       {
-        cedula:this.cedula2,
-        nombre_cliente: this.nombre,
-        email_cliente: this.correo,
-        direccion_cliente:this.direccion,
-        telefono_cliente: this.telefono
+        identification:this.cedula2,
+        name: this.nombre,
+        email: this.correo,
+        address:this.direccion,
+        phone: this.telefono
       },{observe:'response'}
     ).subscribe(response=>{
       this.respuesta=response.status;
@@ -103,12 +104,12 @@ public isClicked: boolean = false;
   }
   //Traerporcedula
   Getforcedula(){
-      this.res=this.objetohttp.get("http://localhost:8080/cliente/Clientes?cedula="+this.cedula2);
+      this.res=this.objetohttp.get("http://localhost:8080/api/clients/identification/" + this.cedula2);
       this.res.subscribe((data:any[])=>{
         this.contenido=data
       });
-
   }
+
   nombre3!:String;
   correo3!: String;
   cedula3:any;
@@ -117,14 +118,14 @@ public isClicked: boolean = false;
 
   mostrarencasillas(){
     this.bloquear();
-    this.res=this.objetohttp.get("http://localhost:8080/cliente/Clientes?cedula="+this.cedula2);
+    this.res=this.objetohttp.get("http://localhost:8080/api/clients/identification/"+this.cedula2);
     this.res.subscribe((data:any[])=>{
       this.contenido=data
     });
   }
   respuesta2:number=1;
   buscarclientecedula(){
-    this.res=this.objetohttp.get("http://localhost:8080/cliente/Clientes?cedula="+this.cedula,{observe:'response'})
+    this.res=this.objetohttp.get("http://localhost:8080/api/clients/identification/"+this.cedula,{observe:'response'})
     .subscribe(response=>{
       this.respuesta2=response.status;
     });

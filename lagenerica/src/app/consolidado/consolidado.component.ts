@@ -1,18 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
 @Component({
-  selector: 'app-listadocliente',
-  templateUrl: './listadocliente.component.html',
-  styleUrls: ['./listadocliente.component.css']
+  selector: 'app-consolidado',
+  templateUrl: './consolidado.component.html',
+  styleUrls: ['./consolidado.component.css']
 })
-export class ListadoclienteComponent implements OnInit {
-  
+export class ConsolidadoComponent implements OnInit {
+
 
   constructor(private objetohttp:HttpClient) { }
   res:any;
   contenido:any;
-  urlapi:string="http://localhost:8080/api/clients";
+  urlapi:string="http://localhost:8080/consolidado/Consolidado";
+  
+  valor_total= 211334 + 4324344 + 43242344
 
   ngOnInit(): void {
     this.res=this.objetohttp.get(this.urlapi);

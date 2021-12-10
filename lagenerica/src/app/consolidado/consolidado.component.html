@@ -1,0 +1,29 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+<app-menu></app-menu>
+<h1>Total de ventas por ciudad</h1>
+<div ><table  class="table">
+    <thead class="table-dark">
+        <tr>
+            <th>Ciudad</th>
+            <th>Valor</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let consolidado of contenido">
+            <td>{{consolidado.ciudad}}</td>
+            <td>{{consolidado.valortotalventas}}</td>
+        </tr>
+    </tbody>
+    </table></div>
+    <div ><table  class="table">
+        <thead class="table-dark">
+            <tr>
+                <th>Valor total ventas tienda</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{valor_total}}</td>
+            </tr>
+        </tbody>
+        </table></div>

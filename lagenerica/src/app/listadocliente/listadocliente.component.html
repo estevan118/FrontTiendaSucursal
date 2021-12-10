@@ -1,25 +1,25 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
 <app-menu></app-menu>
-<div ><table  class="table table-dark table-striped">
-    <thead>
-        <tr>
-            <th>Cedula</th>
-            <th>Nombre</th>
-            <th>Direccion</th>
-            <th>Telefono</th>
-            <th>Correo</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let cliente of contenido">
-            <td>{{cliente.cedula}}</td>
-            <td>{{cliente.nombre_cliente}}</td>
-            <td>{{cliente.direccion_cliente}}</td>
-            <td>{{cliente.telefono_cliente}}</td>
-            <td>{{cliente.email_cliente}}</td>
+    <div ><table  class="table table-dark table-striped">
+      <thead>
+          <tr>
+              <th>Cedula</th>
+              <th>Nombre</th>
+              <th>Direccion</th>
+              <th>Telefono</th>
+              <th>Correo</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let cliente of contenido">
+              <td>{{cliente.identification}}</td>
+              <td>{{cliente.address}}</td>
+              <td>{{cliente.email}}</td>
+              <td>{{cliente.name}}</td>
+              <td>{{cliente.phone}}</td>
 
-        </tr>
-    
-    </tbody>
-    
-    </table></div>
+          </tr>
+      
+      </tbody>
+      
+      </table></div>

@@ -3,8 +3,8 @@
 <div class = "contenedor" >
   <div class = "formulario">
     <h1>Cliente</h1>
-    <input type="text" placeholder="cedula"   [(ngModel)]="cedula" [disabled]="isClicked">
-    <input type="text" placeholder="nombre"  [(ngModel)]="nombre" >
+    <input type="text" placeholder="cedula"    [(ngModel)]="cedula" [disabled]="isClicked" >
+    <input type="text" placeholder="nombre"    [(ngModel)]="nombre" >
     <input type="text" placeholder="direccion"   [(ngModel)]="direccion" >
     <input type="text" placeholder="telefono"   [(ngModel)]="telefono">
     <input type="text" placeholder="correo"   [(ngModel)]="correo" >
@@ -34,11 +34,11 @@
       </thead>
       <tbody>
           <tr *ngFor="let cliente of contenido">
-              <td>{{cliente.cedula}}</td>
-              <td>{{cliente.nombre_cliente}}</td>
-              <td>{{cliente.direccion_cliente}}</td>
-              <td>{{cliente.telefono_cliente}}</td>
-              <td>{{cliente.email_cliente}}</td>
+              <td>{{cliente.identification}}</td>
+              <td>{{cliente.address}}</td>
+              <td>{{cliente.email}}</td>
+              <td>{{cliente.name}}</td>
+              <td>{{cliente.phone}}</td>
 
           </tr>
       

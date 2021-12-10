@@ -12,8 +12,17 @@ export class MenuComponent implements OnInit {
   llevarcliente(){
     this.router.navigate(["/cliente"]);
   }
+  llevarproveedores(){
+    this.router.navigate(["/proveedores"]);
+  }
   llevarproductos(){
     this.router.navigate(["/products"]);
+  }
+  llevarsales(){
+    this.router.navigate(["/sales"]);
+  }
+  llevarconsolidado(){
+    this.router.navigate(["/consolidado"]);
   }
   ngOnInit(): void {
   }
